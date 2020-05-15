@@ -1,16 +1,23 @@
-import NfcManager, { NfcEvents } from 'react-native-nfc-manager';
+import NfcManager, { NfcEvents, TagEvent } from 'react-native-nfc-manager';
 
 export default class NfcModule {
-    componentDidMount() {
+    private onRead: (id: string, techTypes: string) => (void);
+
+    constructor(onRead: (id: string, techTypes: string) => (void)) {
+        this.onRead = onRead;
+    }
+
+    public open() {
         NfcManager.start();
-        NfcManager.setEventListener(NfcEvents.DiscoverTag, (tag: any) => {
+        NfcManager.setEventListener(NfcEvents.DiscoverTag, (tag: TagEvent) => {
             console.warn('tag', tag);
+            this.onRead(tag.id?.toString() as string, tag.techTypes?.toString() as string);
             NfcManager.setAlertMessageIOS('I got your tag!');
             NfcManager.unregisterTagEvent().catch(() => 0);
         });
     }
 
-    componentWillUnmount() {
+    public close() {
         NfcManager.setEventListener(NfcEvents.DiscoverTag, null);
         NfcManager.unregisterTagEvent().catch(() => 0);
     }
@@ -25,6 +32,7 @@ export default class NfcModule {
     }
 
     public cancel = () => {
+        this.onRead('', '');
         NfcManager.unregisterTagEvent().catch(() => 0);
     }
 }

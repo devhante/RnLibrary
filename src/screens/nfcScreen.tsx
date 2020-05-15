@@ -2,16 +2,31 @@ import React from 'react'
 import { Button, StyleSheet, Text, View} from 'react-native';
 import NfcModule from '../modules/nfcModule/nfcModule';
 
-export class NfcScreen extends React.Component {
+interface IProps {
+
+}
+
+interface IState {
+    id: string
+    techTypes: string
+}
+
+export class NfcScreen extends React.Component<IProps, IState> {
     private nfcModule: NfcModule;
 
-    constructor(props: any) {
+    constructor(props: IProps) {
         super(props);
-        this.nfcModule = new NfcModule();
+        this.state = { id: '', techTypes: ''};
+        this.nfcModule = new NfcModule(this.handleRead);
+        this.nfcModule.open();
+    }
+
+    private handleRead = (id: string, techTypes: string) => {
+        this.setState({ id: id, techTypes: techTypes })
     }
 
     private handlePressTestButton = () => {
-        this.nfcModule.test();
+        this.nfcModule.test()
     }
 
     private handlePressCancelButton = () => {
@@ -34,6 +49,8 @@ export class NfcScreen extends React.Component {
                         onPress={this.handlePressCancelButton}
                     />
                 </View>
+                <Text style={styles.title}>ID : {this.state.id}</Text>
+                <Text style={styles.title}>TechTypes : {this.state.value}</Text>
             </View>
         );
     }
