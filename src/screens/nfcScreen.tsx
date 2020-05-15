@@ -50,7 +50,7 @@ export class NfcScreen extends React.Component<IProps, IState> {
                     />
                 </View>
                 <Text style={styles.title}>ID : {this.state.id}</Text>
-                <Text style={styles.title}>TechTypes : {this.state.value}</Text>
+                <Text style={styles.title}>TechTypes : {this.state.techTypes}</Text>
             </View>
         );
     }
