@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1007007496407",
+    "firebase_url": "https://rnlibrary-devhante.firebaseio.com",
+    "project_id": "rnlibrary-devhante",
+    "storage_bucket": "rnlibrary-devhante.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007007496407:android:c62197abd4c44299fbd892",
+        "android_client_info": {
+          "package_name": "com.devhante.rnlibrary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007007496407-cc1hbe1ivn2at3f6gd9fbp481q7bv9h0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFKu9p3R-KkDvL5QIbtrOSC8Pekjv5arM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007007496407-cc1hbe1ivn2at3f6gd9fbp481q7bv9h0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
