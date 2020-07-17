@@ -1,4 +1,4 @@
-package com.rnlibrary;
+package com.devhante.rnlibrary;
 
 import com.facebook.react.ReactActivity;
 
