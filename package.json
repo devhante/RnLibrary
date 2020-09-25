@@ -1,5 +1,5 @@
 {
-  "name": "RnLibrary",
+  "name": "react-nativr-library",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,7 +13,8 @@
     "core-js": "^3.6.5",
     "react": "16.11.0",
     "react-native": "0.62.2",
-    "react-native-camera": "^3.30.0",
+    "react-native-camera": "^3.32.0",
+    "react-native-firebase": "^5.6.0",
     "react-native-nfc-manager": "^2.1.6"
   },
   "devDependencies": {
@@ -29,8 +30,8 @@
     "eslint": "^6.5.1",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.58.0",
-    "react-test-renderer": "16.11.0",
     "prettier": "^2.0.4",
+    "react-test-renderer": "16.11.0",
     "typescript": "^3.8.3"
   },
   "jest": {

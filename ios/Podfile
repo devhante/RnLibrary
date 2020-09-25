@@ -81,10 +81,8 @@ target 'RnLibrary' do
     'BarcodeDetectorMLKit'
   ]
 
-  target 'RnLibraryTests' do
-    inherit! :complete
-    # Pods for testing
-  end
+  pod 'Firebase/Core', '~> 6.13.0'
+  pod 'Firebase/Messaging', '~> 6.13.0'
 
   use_native_modules!
 
@@ -95,14 +93,5 @@ target 'RnLibrary' do
   add_flipper_pods!
   post_install do |installer|
     flipper_post_install(installer)
-  end
-end
-
-target 'RnLibrary-tvOS' do
-  # Pods for RnLibrary-tvOS
-
-  target 'RnLibrary-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
   end
 end
